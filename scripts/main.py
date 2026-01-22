@@ -26,15 +26,14 @@ except Exception as e:
     print("MySQL connection failed... :()", e)
 
 
-def run_weather_job():
+def run_weather_job(city: str):
     # building a request URL
-    city = "Terrell"
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=imperial"    # deprecated parameter usage-- location by city via built-in geocoding
 
     response = requests.get(url)    # sending a GET request to the API endpoint and receiving/storing response (as a Response object)
     data = response.json()    # taking the JSON text from response to my GET request and converting it to Python data structure(s)
-    #print(data)
-
+    print(data)
+    
     result = weather_utils.display_weather(data)
     #print(result)
 
@@ -43,7 +42,9 @@ def run_weather_job():
 
 
 if __name__ == "__main__":
-    run_weather_job()
+    run_weather_job("Terrell")
+    run_weather_job("Mesquite")
+    run_weather_job("Dallas")
 
 
 
