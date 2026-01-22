@@ -22,16 +22,17 @@ def insert_weather_record(data: dict):
 
         sql = """
         INSERT INTO weather_data (
-            date, sunrise, sunset, weather_condition, current_temperature,
+            city, date, sunrise, sunset, weather_condition, current_temperature,
             feels_like_temperature, humidity, high_temperature, low_temperature,
             wind_speed, wind_direction, visibility
         )
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
 
         today = datetime.now().date()
 
         values = (
+            data["city"],
             today,
             data["sunrise"],
             data["sunset"],
