@@ -9,6 +9,7 @@ Work in progress. Primary scripts are functional. Future updates to focus on:
 - Error handling
 - More database functionality
 - Improving data analysis features
+- Possibly traffic data
 
 ## Structure 
 - 'scripts/' -- contains the main scripts and utility functions
