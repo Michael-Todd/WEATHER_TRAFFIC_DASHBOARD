@@ -5,6 +5,8 @@ def convert_unix_to_time(timestamp, timezone_offset_seconds):
     local_time = datetime.fromtimestamp(timestamp, tz)            # creates a datetime object via the method .fromtimestamp, which is fed a timestamp and the timezone object above to create an aware datetime
     return local_time.strftime("%H:%M:%S")
 
+def get_city(data):
+    return data["name"]
 
 def get_sunrise(data):
     timestamp = data["sys"]["sunrise"]
@@ -47,6 +49,7 @@ def get_visibility(data):
 
 def display_weather(data):
     return {
+        "city": get_city(data),
         "condition": get_condition(data),
         "temperature": get_temperature(data),
         "feels like": get_feels_like(data),
