@@ -27,6 +27,18 @@ def insert_weather_record(data: dict):
             wind_speed, wind_direction, visibility
         )
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            sunrise = VALUES(sunrise),
+            sunset = VALUES(sunset),
+            weather_condition = VALUES(weather_condition),
+            current_temperature = VALUES(current_temperature),
+            feels_like_temperature = VALUES(feels_like_temperature),
+            humidity = VALUES(humidity),
+            high_temperature = VALUES(high_temperature),
+            low_temperature = VALUES(low_temperature),
+            wind_speed = VALUES(wind_speed),
+            wind_direction = VALUES(wind_direction),
+            visibility = VALUES(visibility);
         """
 
         today = datetime.now().date()
