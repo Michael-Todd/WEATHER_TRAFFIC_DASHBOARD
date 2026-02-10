@@ -6,7 +6,7 @@ import os                          # brings in operating system functionality, n
 import weather_utils
 import database_utils
 
-# load API keys from .env
+# load API keys from .env; this is the entry point so this is the only place the function need be called
 load_dotenv()
 api_key = os.getenv("OPENWEATHER_API_KEY")
 
@@ -16,9 +16,9 @@ print("Python, MySQL connector, pandas, requests, and dotenv are ready!")
 # test MySQL connection, safely :)
 try:
     conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="YOUR_PASSWORD_HERE"
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD")
     )
     print("MySQL is connected!")
     conn.close()

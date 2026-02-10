@@ -1,13 +1,14 @@
 import mysql.connector
 from mysql.connector import Error
 from datetime import datetime
+import os      
 
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="YOUR_PASSWORD_HERE",
-        database="weather"
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME")
     )
 
 def insert_weather_record(data: dict):
