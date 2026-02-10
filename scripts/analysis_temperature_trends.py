@@ -1,11 +1,12 @@
 import pandas as pd
 import mysql.connector
+import os
 
 conn = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    password = "YOUR_PASSWORD_HERE",
-    database = "weather"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 
 query = """
