@@ -24,11 +24,6 @@ df = pd.read_sql(query, conn)
 conn.close()
 
 df["date"] = pd.to_datetime(df["date"])
-terrell_df = df[df["city"] == "Terrell"]
-dallas_df = df[df["city"] == "Dallas"]
-mesquite_df = df[df["city"] == "Mesquite"]
 
-terrell_df.to_csv("terrell_temperature_trends.csv", index = False)
-dallas_df.to_csv("dallas_temperature_trends.csv", index = False)
-mesquite_df.to_csv("mesquite_temperature_trends.csv", index = False)
+df.to_csv("city_temperature_trends", index = False)
 
