@@ -28,6 +28,6 @@ df = pd.read_sql(query, conn)
 conn.close()
 
 df["date"] = pd.to_datetime(df["date"])
-df["temperature_difference"] = df["current_temperature"] - df["feels_like_temperature"]
+df["temperature_difference"] = df["feels_like_temperature"] - df["current_temperature"] #positive value = feels-like temperature is higher; negative value = feels-like temperature is lower
 
 df.to_csv("data/feels_like_factors.csv", index = False)
