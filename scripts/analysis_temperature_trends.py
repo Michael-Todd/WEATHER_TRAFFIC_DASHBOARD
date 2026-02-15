@@ -1,6 +1,9 @@
 import pandas as pd
 import mysql.connector
 import os
+from dotenv import load_dotenv 
+
+load_dotenv()
 
 conn = mysql.connector.connect(
     host=os.getenv("DB_HOST"),
@@ -25,5 +28,5 @@ conn.close()
 
 df["date"] = pd.to_datetime(df["date"])
 
-df.to_csv("city_temperature_trends", index = False)
+df.to_csv("data/city_temperature_trends.csv", index = False)
 
