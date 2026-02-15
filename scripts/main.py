@@ -45,6 +45,7 @@ if __name__ == "__main__":
     run_weather_job("Terrell")
     run_weather_job("Mesquite")
     run_weather_job("Dallas")
+    run_weather_job("Chicago")
 
 
 
