@@ -47,7 +47,7 @@ def get_visibility(data):
     return data["visibility"]
 
 
-def display_weather(data):
+def format_weather(data):
     return {
         "city": get_city(data),
         "condition": get_condition(data),
@@ -62,7 +62,7 @@ def display_weather(data):
         "sunset": get_sunset(data)
     }
 
-def print_display_weather(data):
+def print_format_weather(data):
     print("Condition:", get_condition(data), sep=" ")
     print("Temperature:", get_temperature(data), sep= " ")
 

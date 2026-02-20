@@ -15,7 +15,7 @@ def insert_weather_record(data: dict):
     conn = None
     cursor = None
     """
-    Expects the dictionary returned by display_weather().
+    Expects the dictionary returned by format_weather().
     """
     try:
         conn = get_connection()

@@ -34,7 +34,7 @@ def run_weather_job(city: str):
     data = response.json()    # taking the JSON text from response to my GET request and converting it to Python data structure(s)
     print(data)
     
-    result = weather_utils.display_weather(data)
+    result = weather_utils.format_weather(data)
     #print(result)
 
     database_utils.insert_weather_record(result)
