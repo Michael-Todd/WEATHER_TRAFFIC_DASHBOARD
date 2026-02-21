@@ -1,23 +1,25 @@
 # Weather Data Project
 
 ## Description
-This project is designed to fetch, process, and analyze weather data via the OpenWeather API.
+This project was made to fetch, process, and analyze weather data using the OpenWeather API.
 It includes Python scripts that perform data collection, database management, and the utility functions that organize the weather data from OpenWeather.
+It includes Python scripts that perform data collection, transformation, database insertion,
+Python, OpenWeather API, pandas, MySQL, and Tableau are the tools used.
+OpenWeather -> Python -> MySQL -> pandas -> Tableau
 
 ## Current Status
-Work in progress. Primary scripts are functional. Future updates to focus on:
+Primary scripts are functional. Data points are continuing to be collected every day. Future updates may focus on:
 - Error handling
 - More database functionality
 - Improving data analysis features
-- Possibly traffic data
+- Possibly traffic data (hence the naming of the project)
 
 ## Structure 
 - 'scripts/' -- contains the main scripts and utility functions
-- 'data/' -- currently a placeholder folder for storing fetched/processed data
+- 'data/' -- contains CSV files that make up the data source for the Tableau portion of this project
 - 'requirements.txt' -- lists versions of relevant software in order to reproduce my venv
 
 ## Design Decisions
-- FIXME: decisions for things that came befoe initial Git commit
 - Separation of concerns: I separated API handling, data transformation, and database logic, into separate scripts for clarity, scalability, and maintainability
 - Daily weather data pulls: I decided to pull weather data once a day at 12:00pm. This lends itself to extensions in the future if desired (for example, pulling data for the morning and evening as well)
 - Single table for all cities: My initial plan was to make one table per city, but I realized from a design standpoint that it'd be much more appropriate to store weather data within a single table. I came to this conclusion because each city stores the exact same set of data, so weather data is the entity at play here; also, opting for a single table prevented my Python code (main.py and database_utils.py) from becoming reptitive with multiple weather-pulling functions and insertion statements

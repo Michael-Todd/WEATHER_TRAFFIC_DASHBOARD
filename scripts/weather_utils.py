@@ -68,13 +68,10 @@ def print_format_weather(data):
 
 
 
-# begin crunchers
-def get_temp_diff(data):
-    return get_high(data) - get_low(data)
-
+# begin inactive functions
 def get_sun_diff(data):
-    return "PLACEHOLDER" #Loosely, I want to do "sunset - sunrise"
-# end crunchers
+    return "PLACEHOLDER" # Loosely, I want to do "sunset - sunrise"
+# end inactive functions
 
 
 

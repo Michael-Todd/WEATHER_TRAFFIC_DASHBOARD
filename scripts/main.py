@@ -13,7 +13,7 @@ api_key = os.getenv("OPENWEATHER_API_KEY")
 # test connections and libraries
 print("Python, MySQL connector, pandas, requests, and dotenv are ready!")
 
-# test MySQL connection, safely :)
+# test MySQL connection
 try:
     conn = mysql.connector.connect(
         host=os.getenv("DB_HOST"),
@@ -35,7 +35,7 @@ def run_weather_job(city: str):
     print(data)
     
     result = weather_utils.format_weather(data)
-    #print(result)
+    print(result)
 
     database_utils.insert_weather_record(result)
 

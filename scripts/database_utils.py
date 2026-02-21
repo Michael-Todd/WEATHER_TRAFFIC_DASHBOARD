@@ -73,5 +73,3 @@ def insert_weather_record(data: dict):
             conn.close()
         if cursor:
             cursor.close()
-
-#TODO logging instead of printing; svae raw API response to a json or text column for tracing; uniqueness constraint/index on (date) to prevent duplicates
