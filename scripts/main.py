@@ -3,8 +3,8 @@ import pandas as pd                # brings in the pandas library and allows me 
 import requests                    # library allowing Python to perform HTTP/HTTPS requests, necessary for the API interactions thorughout this project
 from dotenv import load_dotenv     # brings in the function that reads the .env file, allowing access to my environment variables (API keys, etc...)
 import os                          # brings in operating system functionality, namely reading environment variables
-import weather_utils
-import database_utils
+import utils_weather
+import utils_database
 
 # load API keys from .env; this is the entry point so this is the only place the function need be called
 load_dotenv()
@@ -31,13 +31,13 @@ def run_weather_job(city: str):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=imperial"    # deprecated parameter usage-- location by city via built-in geocoding
 
     response = requests.get(url)    # sending a GET request to the API endpoint and receiving/storing response (as a Response object)
-    data = response.json()    # taking the JSON text from response to my GET request and converting it to Python data structure(s)
+    data = response.json()          # taking the JSON text from response to my GET request and converting it to Python data structure(s)
     print(data)
     
-    result = weather_utils.format_weather(data)
+    result = utils_weather.format_weather(data)
     print(result)
 
-    database_utils.insert_weather_record(result)
+    utils_database.insert_weather_record(result)
 
 
 
@@ -46,6 +46,4 @@ if __name__ == "__main__":
     run_weather_job("Mesquite")
     run_weather_job("Dallas")
     run_weather_job("Chicago")
-
-
-
+    
