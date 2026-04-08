@@ -12,7 +12,8 @@ OpenWeather API → Python → MySQL → pandas → Tableau
 
 ## Current Status
 - Data collection, cleaning, and analysis scripts are fully functional  
-- Data is collected daily at 12:00 PM  
+- Data is collected daily at 12:00 PM
+- Tableau has been connected with the CSVs created through analysis files  
 
 ---
 
