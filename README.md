@@ -19,7 +19,7 @@ OpenWeather API → Python → MySQL → pandas → Tableau
 ## Project Structure
 - `scripts/` — data collection, transformation, analysis, and database logic  
 - `data/` — CSV files used as Tableau data sources
-- `screenshots` - screenshots of Tableau dashboards and regression output
+- `screenshots/` - screenshots of Tableau dashboards and regression output
 - `requirements.txt` — environment dependencies for reproducibility  
 
 ---
