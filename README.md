@@ -1,9 +1,9 @@
 # Weather Data Project
 
 ## Description
-This project builds an end-to-end data pipeline that collects, stores, and analyzes weather data using the OpenWeather API.
+This project builds a data pipeline that collects, stores, transforms, and analyzes weather data using the OpenWeather API.
 
-The pipeline integrates Python, MySQL, pandas, and Tableau to transform raw API data into structured insights.
+Said pipeline integrates Python, MySQL, pandas, and Tableau to transform raw API data into meaningful insights.
 
 **Workflow:**  
 OpenWeather API → Python → MySQL → pandas → Tableau
@@ -14,12 +14,6 @@ OpenWeather API → Python → MySQL → pandas → Tableau
 - Data collection, cleaning, and analysis scripts are fully functional  
 - Data is collected daily at 12:00 PM  
 - Tableau dashboards are built for exploratory and statistical analysis  
-
-**Planned improvements:**
-- Additional error handling  
-- Expanded database functionality  
-- Further analysis as dataset grows  
-- Regression analysis for hot temperature ranges once a sufficient number of data points are collected
 
 ---
 
@@ -104,8 +98,9 @@ Regression analysis confirmed these findings:
 ---
 
 ## Future Improvements
-
-- Expand dataset to strengthen statistical reliability  
-- Perform regression analysis for hot temperature range  
-- Explore additional variables (e.g., sunlight, cloud cover)  
+- Expand dataset to strengthen statistical reliability
 - Increase data collection frequency (morning vs evening comparisons)
+- Further analysis as dataset grows
+- Regression analysis for the hot temperature range once a sufficient number of data points are collected
+- Explore additional feels-like variables (e.g., sunlight, cloud cover)
+- Additional error handling 
