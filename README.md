@@ -41,7 +41,7 @@ OpenWeather API → Python → MySQL → pandas → Tableau
 - **Safe reruns with `ON DUPLICATE KEY UPDATE`:**  
   Allows scripts to be rerun without introducing duplicate data  
 
-- **Segmenting analysis based on temperature range**
+- **Segmenting analysis based on temperature range:**
   Initially, both temperature trends and feels-like analysis were separated by city; I decided it would be more valuable to analyze feels-like factors based on temperature ranges (cold, mid, hot), so as to prevent dampening the effects of wind/humidity in the non-segmented version
 
 ---
